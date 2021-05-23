@@ -3,9 +3,9 @@ import React from "react"
 import Box from "@material-ui/core/Box"
 import { Button, Container, Link } from "@material-ui/core"
 
-export default function TopNavLinks() {
+export default function TopNavLinks(props) {
   return (
-    <Box width={1} bgcolor="grey.900" my={0}>
+    <Box width={1} bgcolor={props.dark ? "grey.900" : "#FFF8F5"} my={0}>
       <Container p={0}>
         <Box
           width={1}
@@ -19,23 +19,24 @@ export default function TopNavLinks() {
               pt={2}
               fontSize="h4.fontSize"
               fontWeight="fontWeightBold"
-              color="white">
-              Tolu & Joy’s Experience
+              color={props.dark ? "white" : "grey.900"}>
+              {props.title}
             </Box>
 
             <Box my={1}>
-              <Button size="small" variant="outlined" color="secondary">
-                Customer
+              <Button
+                size="small"
+                variant="outlined"
+                color={props.dark ? "secondary" : "grey.900"}>
+                {props.category}
               </Button>
             </Box>
 
-            <Box py={2} fontSize="h6.fontSize" color="grey.200">
-              I had the best experience shopping with vasiti. Usability of the
-              website was great, very good customer service, an all round great
-              experience. I would definately be coming back! I had the best
-              experience shopping with vasiti. Usability of the website was
-              great, very good customer service, an all round great experience.
-              I would definitely be coming back!
+            <Box
+              py={2}
+              fontSize="h6.fontSize"
+              color={props.dark ? "grey.200" : "grey.900"}>
+              {props.story}
             </Box>
             <Box>
               <Button color="primary">Share your own story!</Button>
@@ -48,11 +49,10 @@ export default function TopNavLinks() {
             width={{ sm: "1", md: "1 / 2" }}
             style={{
               maxWidth: "100%",
-              background:
-                "center Top / cover  no-repeat url(/img/ellipse-dark.png)",
+              background: `center Top / cover  no-repeat url(${props.eclipse})`,
             }}>
             <img
-              src="/img/black-beautiful-ladies-smiling.png"
+              src={props.photo}
               style={{ maxWidth: "100%", margin: "auto 0" }}
             />
           </Box>

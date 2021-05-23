@@ -5,8 +5,8 @@ import { Button, Container, Link } from "@material-ui/core"
 
 export default function TheFooter() {
   return (
-    <Box width={1} bgcolor="grey.800" my={0}>
-      <Container p={0}>
+    <Box mt={8} width={1} bgcolor="grey.800">
+      <Container>
         <Box
           width={1}
           display={{ xs: "block", md: "flex" }}
@@ -19,7 +19,6 @@ export default function TheFooter() {
               style={{ maxWidth: "100%", margin: "auto 0" }}
             />
           </Box>
-
           <Box p={{ xs: 4, md: 8 }} width={{ sm: "1", md: "1 / 2" }}>
             <Box
               pt={2}
@@ -33,6 +32,34 @@ export default function TheFooter() {
               We’d make sure you’re always first to know what’s happening on
               Vasiti—thus, the world.
             </Box>
+          </Box>
+        </Box>
+
+        <Box
+          py={8}
+          width={1}
+          color="white"
+          display={{ xs: "block", md: "flex" }}
+          alignItems="center"
+          justifyContent="between"
+          justifyContent={{ sm: "center", md: "between" }}>
+          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
+            Join our community
+          </Box>
+          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
+            Join our community
+          </Box>
+          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
+            Join our community
+          </Box>
+          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
+            Join our community
+          </Box>
+          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
+            <Box py={2} fontWeight="fontWeightBold">
+              Join our community
+            </Box>
+            <div>Email Newsletter</div>
           </Box>
         </Box>
       </Container>

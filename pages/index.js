@@ -27,11 +27,23 @@ export default function Home() {
 
         <section>
           <HeroSection />
-          <FeaturedStory />
+          <FeaturedStory
+            dark
+            category="Customer"
+            eclipse="/img/ellipse-dark.png"
+            title="Tolu & Joy’s Experience"
+            photo="/img/black-beautiful-ladies-smiling.png"
+            story="I had the best experience shopping with Vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back! I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back!"
+          />
+          <FeaturedStory
+            category="vendor"
+            title="Josiah’s Experience"
+            eclipse="/img/ellipse-light.png"
+            photo="/img/woman-shoppingbag-card.png"
+            story="I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back! I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back!"
+          />
         </section>
-        <br />
-        <br />
-        <br />
+
         <footer>
           <TheFooter />
         </footer>
