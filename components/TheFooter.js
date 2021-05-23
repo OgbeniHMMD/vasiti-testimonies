@@ -1,17 +1,16 @@
 import React from "react"
 
 import Box from "@material-ui/core/Box"
-import { Button, Container, Link } from "@material-ui/core"
+import { Button, Container, InputBase, Link, Paper } from "@material-ui/core"
 
 export default function TheFooter() {
   return (
-    <Box mt={8} width={1} bgcolor="grey.800">
+    <Box mt={8} width={1} bgcolor="grey.900">
       <Container>
         <Box
           width={1}
           display={{ xs: "block", md: "flex" }}
           alignItems="center"
-          justifyContent="between"
           justifyContent={{ sm: "center", md: "between" }}>
           <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 2" }}>
             <img
@@ -25,12 +24,36 @@ export default function TheFooter() {
               fontSize="h4.fontSize"
               fontWeight="fontWeightBold"
               color="white">
-              Be a member of our community 🎉
+              Be a member
+              <br />
+              of our community 🎉
             </Box>
 
             <Box py={2} color="grey.200">
               We’d make sure you’re always first to know what’s happening on
               Vasiti—thus, the world.
+            </Box>
+
+            <Box
+              p={1}
+              my={2}
+              width={1}
+              bgcolor="#fff"
+              display="flex"
+              justifyContent="between">
+              <Box flexGrow={1}>
+                <InputBase
+                  width={1}
+                  placeholder="enter your email address"
+                  inputProps={{ "aria-label": "enter your email address" }}
+                />
+              </Box>
+
+              <Box flexShrink={1}>
+                <Button bgcolor="grey.800" type="submit" aria-label="search">
+                  SUBSCRIBE
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>
