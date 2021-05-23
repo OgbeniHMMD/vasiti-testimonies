@@ -4,10 +4,10 @@ import { Container, Link } from "@material-ui/core"
 
 export default function TopNavBar() {
   const AnchorLinks = [
-    { id: 1, title: "ABOUT", slug: "#about" },
+    { id: 1, title: "ABOUT", slug: "https://vasiti.com/about" },
     { id: 1, title: "STORIES", slug: "#stories" },
-    { id: 1, title: "CONTACT", slug: "#contact" },
-    { id: 1, title: "LOGIN", slug: "#login" },
+    { id: 1, title: "CONTACT", slug: "https://vasiti.com/contact" },
+    { id: 1, title: "LOGIN", slug: "https://vasiti.com/login" },
   ]
   const anchorLink = AnchorLinks.map((el) => (
     <Link href={el.slug}>
@@ -18,10 +18,12 @@ export default function TopNavBar() {
   ))
 
   const NavLinks = [
-    { id: 1, title: "ABOUT", slug: "#about" },
-    { id: 1, title: "STORIES", slug: "#stories" },
-    { id: 1, title: "CONTACT", slug: "#contact" },
-    { id: 1, title: "LOGIN", slug: "#login" },
+    { id: 1, title: "MARKETPLACE", slug: "https://vasiti.com/marketplace" },
+    { id: 1, title: "WHOLESALE CENTER", slug: "https://wholesale.vasiti.com/" },
+    { id: 1, title: "SELLER CENTER", slug: "https://seller.vasiti.com/" },
+    { id: 1, title: "SERVICES", slug: "#" },
+    { id: 1, title: "INTERNSHIPS", slug: "https://vasiti.com/campus-reps" },
+    { id: 1, title: "EVENTS", slug: "https://events.vasiti.com/" },
   ]
   const navLinks = NavLinks.map((el) => (
     <Box flexGrow={1} display="flex" justifyContent="center">
@@ -47,15 +49,18 @@ export default function TopNavBar() {
 
               {anchorLink}
 
-              <Box
-                py={1}
-                px={2}
-                mx={2}
-                color="white"
-                flexShrink={0}
-                borderRadius={4}
-                bgcolor="primary.main">
-                SIGN UP
+              <Box mx={2} flexShrink={0}>
+                <Link href="https://vasiti.com/signup">
+                  <Box
+                    py={1}
+                    px={2}
+                    color="white"
+                    borderRadius={4}
+                    bgcolor="primary.main"
+                    fontWeight="fontWeightMedium">
+                    SIGN UP
+                  </Box>
+                </Link>
               </Box>
             </Box>
           </Container>
