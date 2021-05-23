@@ -1,26 +1,20 @@
 import React from "react"
 
-import { useTheme } from "@material-ui/core/styles"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
-
 import Box from "@material-ui/core/Box"
 import { Button, Container, Link } from "@material-ui/core"
 
 export default function TopNavLinks() {
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
-
   return (
     <Box width={1} bgcolor="grey.900" my={0}>
-      <Container>
+      <Container p={0}>
         <Box
           width={1}
-          display={isMobile ? "block" : "flex"}
+          display={{ xs: "block", md: "flex" }}
           flexDirection="row-reverse"
           alignItems="center"
           justifyContent="between"
           justifyContent={{ sm: "center", md: "between" }}>
-          <Box p={isMobile ? "2" : "0"} width={{ sm: "1", md: "1 / 2" }}>
+          <Box p={{ xs: 4, md: 8 }} width={{ sm: "1", md: "1 / 2" }}>
             <Box
               pt={2}
               fontSize="h4.fontSize"
@@ -41,7 +35,7 @@ export default function TopNavLinks() {
               experience. I would definately be coming back! I had the best
               experience shopping with vasiti. Usability of the website was
               great, very good customer service, an all round great experience.
-              I would definately be coming back!
+              I would definitely be coming back!
             </Box>
             <Box>
               <Button color="primary">Share your own story!</Button>
@@ -50,11 +44,16 @@ export default function TopNavLinks() {
 
           <Box
             pt={2}
+            mt={4}
             width={{ sm: "1", md: "1 / 2" }}
-            style={{ maxWidth: "100%" }}>
+            style={{
+              maxWidth: "100%",
+              background:
+                "center Top / cover  no-repeat url(/img/ellipse-dark.png)",
+            }}>
             <img
               src="/img/black-beautiful-ladies-smiling.png"
-              style={{ maxWidth: "100%" }}
+              style={{ maxWidth: "100%", margin: "auto 0" }}
             />
           </Box>
         </Box>
