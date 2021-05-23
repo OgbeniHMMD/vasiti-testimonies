@@ -1,24 +1,31 @@
 import React from "react"
+
+import { useTheme } from "@material-ui/core/styles"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
+
 import Box from "@material-ui/core/Box"
 import { Container, Link } from "@material-ui/core"
 
 export default function TopNavBar() {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
+
   const AnchorLinks = [
     { id: 1, title: "ABOUT", slug: "https://vasiti.com/about" },
-    { id: 1, title: "STORIES", slug: "#stories" },
-    { id: 1, title: "CONTACT", slug: "https://vasiti.com/contact" },
-    { id: 1, title: "LOGIN", slug: "https://vasiti.com/login" },
+    { id: 2, title: "STORIES", slug: "#stories" },
+    { id: 3, title: "CONTACT", slug: "https://vasiti.com/contact" },
+    { id: 4, title: "LOGIN", slug: "https://vasiti.com/login" },
   ]
-  const anchorLink = AnchorLinks.map((el) => (
-    <Link href={el.slug}>
+  const anchorLink = AnchorLinks.map((link) => (
+    <Link href={link.slug} key={link.id}>
       <Box p={1} mx={2} color="text.primary" fontWeight="fontWeightMedium">
-        {el.title}
+        {link.title}
       </Box>
     </Link>
   ))
 
   return (
-    <Box width={1} py={1}>
+    <div width={1} py={1}>
       <Container>
         <Box display="flex" alignItems="center" bgcolor="background.paper">
           <Box p={1} width={1}>
@@ -27,23 +34,25 @@ export default function TopNavBar() {
             </Link>
           </Box>
 
-          {anchorLink}
+          {!isMobile ? anchorLink : ""}
 
-          <Box mx={2} flexShrink={0}>
-            <Link href="https://vasiti.com/signup">
-              <Box
-                py={1}
-                px={2}
-                color="white"
-                borderRadius={4}
-                bgcolor="primary.main"
-                fontWeight="fontWeightMedium">
-                SIGN UP
-              </Box>
-            </Link>
-          </Box>
+          {!isMobile && (
+            <Box mx={2} flexShrink={0}>
+              <Link href="https://vasiti.com/signup">
+                <Box
+                  py={1}
+                  px={2}
+                  color="white"
+                  borderRadius={4}
+                  bgcolor="primary.main"
+                  fontWeight="fontWeightMedium">
+                  SIGN UP
+                </Box>
+              </Link>
+            </Box>
+          )}
         </Box>
       </Container>
-    </Box>
+    </div>
   )
 }

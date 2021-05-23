@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css"
 import TopNavBar from "../components/TopNavBar"
 import TopNavLinks from "../components/TopNavLinks"
 import HeroSection from "../components/HeroSection"
+import FeaturedStory from "../components/FeaturedStory"
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
 
         <section>
           <HeroSection />
+          <FeaturedStory />
         </section>
 
         <h1 className={styles.title}>
