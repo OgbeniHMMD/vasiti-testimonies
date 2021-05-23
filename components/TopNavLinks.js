@@ -22,19 +22,17 @@ export default function TopNavLinks() {
   ))
 
   return (
-    <nav>
-      <Box width={1} borderTop={1} borderBottom={1} borderColor="grey.200">
-        <Container>
-          <Box
-            width={1}
-            flexGrow={1}
-            display="flex"
-            alignItems="center"
-            justifyContent="around">
-            {navLinks}
-          </Box>
-        </Container>
-      </Box>
-    </nav>
+    <Box width={1} borderTop={1} borderBottom={1} borderColor="grey.200">
+      <Container>
+        <Box
+          width={1}
+          flexGrow={1}
+          display="flex"
+          alignItems="center"
+          justifyContent="around">
+          {navLinks}
+        </Box>
+      </Container>
+    </Box>
   )
 }

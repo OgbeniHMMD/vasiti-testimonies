@@ -18,34 +18,32 @@ export default function TopNavBar() {
   ))
 
   return (
-    <header>
-      <Box width={1} py={1}>
-        <Container>
-          <Box display="flex" alignItems="center" bgcolor="background.paper">
-            <Box p={1} width={1}>
-              <Link href="/">
-                <img src="/img/logo.png" />
-              </Link>
-            </Box>
-
-            {anchorLink}
-
-            <Box mx={2} flexShrink={0}>
-              <Link href="https://vasiti.com/signup">
-                <Box
-                  py={1}
-                  px={2}
-                  color="white"
-                  borderRadius={4}
-                  bgcolor="primary.main"
-                  fontWeight="fontWeightMedium">
-                  SIGN UP
-                </Box>
-              </Link>
-            </Box>
+    <Box width={1} py={1}>
+      <Container>
+        <Box display="flex" alignItems="center" bgcolor="background.paper">
+          <Box p={1} width={1}>
+            <Link href="/">
+              <img src="/img/logo.png" />
+            </Link>
           </Box>
-        </Container>
-      </Box>
-    </header>
+
+          {anchorLink}
+
+          <Box mx={2} flexShrink={0}>
+            <Link href="https://vasiti.com/signup">
+              <Box
+                py={1}
+                px={2}
+                color="white"
+                borderRadius={4}
+                bgcolor="primary.main"
+                fontWeight="fontWeightMedium">
+                SIGN UP
+              </Box>
+            </Link>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   )
 }
