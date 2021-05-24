@@ -113,7 +113,7 @@ export default function TopNavLinks(props) {
         open={dialogForm}
         onClose={CLOSE_FORM_DIALOG}
         aria-labelledby="form-dialog-title">
-        <form autoComplete="off">
+        <form autoComplete="off" onSubmit={CLOSE_FORM_DIALOG}>
           <Box p={2}>
             <Box
               p={3}
@@ -248,7 +248,6 @@ export default function TopNavLinks(props) {
                 <Button
                   size="large"
                   type="submit"
-                  onClick={handleClose}
                   color="primary"
                   variant="contained">
                   Share your story!
@@ -263,7 +262,7 @@ export default function TopNavLinks(props) {
         open={dialogSuccess}
         onClose={CLOSE_SUCCESS_DIALOG}
         aria-labelledby="success-dialog-title">
-        <Box p={8}>
+        <Box p={4}>
           <Box pb={1} textAlign="center">
             <img src="/img/success.png" width="200" height="200" />
           </Box>
@@ -282,7 +281,7 @@ export default function TopNavLinks(props) {
           <Box pt={4} textAlign="center">
             <Button
               size="large"
-              onClick={CLOSE_FORM_DIALOG}
+              onClick={CLOSE_SUCCESS_DIALOG}
               color="primary"
               variant="contained">
               Close
