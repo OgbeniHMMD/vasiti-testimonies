@@ -26,8 +26,26 @@ export default function TopNavLinks(props) {
   const [dialogForm, setDialogForm] = React.useState(false)
   const [dialogSuccess, setDialogSuccess] = React.useState(false)
 
-  const [attachment, setAttachment] = React.useState(null)
-  const [category, setCategory] = React.useState("customer")
+  const initialFormValues = {
+    firstName: "x",
+    lastName: "y",
+    category: "customer",
+    attachment: null,
+    story: "",
+    institution: "",
+  }
+
+  // We'll update "values" as the form updates
+  const [formValues, setValues] = React.useState(initialFormValues)
+
+  const handleInputValue = (e) => {
+    // this function will be triggered by the text field's onBlur and onChange events
+    const { name, value } = e.target
+    setValues({
+      ...formValues,
+      [name]: value,
+    })
+  }
 
   const OPEN_FORM_DIALOG = () => {
     setDialogForm(true)
@@ -44,10 +62,6 @@ export default function TopNavLinks(props) {
 
   const CLOSE_SUCCESS_DIALOG = () => {
     setDialogSuccess(false)
-  }
-
-  const changeCategory = (event) => {
-    setCategory(event.target.value)
   }
 
   return (
@@ -142,8 +156,11 @@ export default function TopNavLinks(props) {
                 <FormControl variant="outlined" style={{ width: "100%" }}>
                   <OutlinedInput
                     required
-                    id="outlined-adornment-password"
                     type="file"
+                    id="outlined-adornment-password"
+                    name="attachment"
+                    onBlur={handleInputValue}
+                    onChange={handleInputValue}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton edge="end">
@@ -169,6 +186,9 @@ export default function TopNavLinks(props) {
                     id="firstName"
                     type="text"
                     fullWidth
+                    name="firstName"
+                    onBlur={handleInputValue}
+                    onChange={handleInputValue}
                   />
                 </label>
               </Box>
@@ -184,6 +204,9 @@ export default function TopNavLinks(props) {
                     fullWidth
                     id="lastName"
                     variant="outlined"
+                    name="lastName"
+                    onBlur={handleInputValue}
+                    onChange={handleInputValue}
                   />
                 </label>
               </Box>
@@ -202,6 +225,9 @@ export default function TopNavLinks(props) {
                   multiline
                   rows={4}
                   variant="outlined"
+                  name="story"
+                  onBlur={handleInputValue}
+                  onChange={handleInputValue}
                 />
               </label>
             </Box>
@@ -223,8 +249,9 @@ export default function TopNavLinks(props) {
                   aria-label="category"
                   name="category"
                   defaultValue="Customer"
-                  value={category}
-                  onChange={changeCategory}>
+                  name="category"
+                  onBlur={handleInputValue}
+                  onChange={handleInputValue}>
                   <FormControlLabel
                     value="customer"
                     control={<Radio color="primary" />}
@@ -241,7 +268,7 @@ export default function TopNavLinks(props) {
               </Box>
             </FormControl>
 
-            {category == "vendor" && (
+            {formValues.category == "vendor" && (
               <Box py={1}>
                 <label>
                   <Box color="grey.800" pb={1}>
@@ -253,6 +280,9 @@ export default function TopNavLinks(props) {
                     type="text"
                     fullWidth
                     variant="outlined"
+                    name="institution"
+                    onBlur={handleInputValue}
+                    onChange={handleInputValue}
                   />
                 </label>
               </Box>
