@@ -23,15 +23,20 @@ import Attachment from "@material-ui/icons/Attachment"
 import { CheckBoxOutlineBlankOutlined } from "@material-ui/icons"
 
 export default function TopNavLinks(props) {
-  const [openForm, setOpenForm] = React.useState(false)
-  const [openSuccess, setOpenSuccess] = React.useState(false)
+  const [dialogForm, setDialogForm] = React.useState(false)
+  const [dialogSuccess, setDialogSuccess] = React.useState(false)
 
   const OPEN_FORM_DIALOG = () => {
-    setOpenForm(true)
+    setDialogForm(true)
   }
 
   const CLOSE_FORM_DIALOG = () => {
-    setOpenForm(false)
+    setDialogForm(false)
+    setDialogSuccess(true)
+  }
+
+  const CLOSE_SUCCESS_DIALOG = () => {
+    setDialogSuccess(false)
   }
 
   return (
@@ -105,7 +110,7 @@ export default function TopNavLinks(props) {
       </Box>
 
       <Dialog
-        open={openForm}
+        open={dialogForm}
         onClose={CLOSE_FORM_DIALOG}
         aria-labelledby="form-dialog-title">
         <form autoComplete="off">
@@ -238,35 +243,50 @@ export default function TopNavLinks(props) {
               </label>
             </Box>
 
-            <DialogActions>
-              <Button
-                size="large"
-                type="submit"
-                // onClick={handleClose}
-                color="primary"
-                variant="contained">
-                Share your story!
-              </Button>
-            </DialogActions>
+            <Box pt={4} display="flex" justifyContent="end">
+              <DialogActions>
+                <Button
+                  size="large"
+                  type="submit"
+                  onClick={handleClose}
+                  color="primary"
+                  variant="contained">
+                  Share your story!
+                </Button>
+              </DialogActions>
+            </Box>
           </Box>
         </form>
       </Dialog>
 
       <Dialog
-        open={openForm}
-        onClose={CLOSE_FORM_DIALOG}
-        aria-labelledby="form-dialog-title">
-        <Box p={4}>
+        open={dialogSuccess}
+        onClose={CLOSE_SUCCESS_DIALOG}
+        aria-labelledby="success-dialog-title">
+        <Box p={8}>
+          <Box pb={1} textAlign="center">
+            <img src="/img/success.png" width="200" height="200" />
+          </Box>
           <Box
             py={3}
             textAlign="center"
-            fontSize="h5.fontSize"
+            fontSize="h4.fontSize"
             fontWeight="fontWeightBold">
             Thank you for sharing your story!
           </Box>
-          <Box>
+          <Box textAlign="center" fontSize="h6.fontSize">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Box>
+
+          <Box pt={4} textAlign="center">
+            <Button
+              size="large"
+              onClick={CLOSE_FORM_DIALOG}
+              color="primary"
+              variant="contained">
+              Close
+            </Button>
           </Box>
         </Box>
       </Dialog>
