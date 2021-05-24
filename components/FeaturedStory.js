@@ -191,6 +191,8 @@ export default function TopNavLinks(props) {
                   id="story"
                   type="text"
                   fullWidth
+                  multiline
+                  rows={4}
                   variant="outlined"
                 />
               </label>
