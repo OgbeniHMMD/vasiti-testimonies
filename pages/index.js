@@ -27,9 +27,9 @@ export default function Home() {
     ))
 
   return (
-    <body>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Testimonies - Vasiti.com</title>
         <meta
           name="description"
           content="Vasiti.com is Nigeria's largest platform for students. Vasiti uses technology and social innovation to help student entrepreneurs build successful businesses, empower students and also make their lives easier by giving them quick and easy access to all they need around campus including goods, services and relevant information."
@@ -82,6 +82,6 @@ export default function Home() {
           <TheFooter />
         </footer>
       </main>
-    </body>
+    </div>
   )
 }

@@ -15,7 +15,6 @@ import { Facebook, LinkedIn, Twitter, Instagram } from "@material-ui/icons"
 export default function TheFooter() {
   const LINKS = [
     {
-      id: 1,
       title: "Company",
       links: [
         { title: "About Us", slug: "https://vasiti.com/about" },
@@ -25,7 +24,6 @@ export default function TheFooter() {
       ],
     },
     {
-      id: 2,
       title: "Products",
       links: [
         { title: "Marketplace", slug: "https://vasiti.com/marketplace" },
@@ -39,7 +37,6 @@ export default function TheFooter() {
       ],
     },
     {
-      id: 3,
       title: "Career",
       links: [
         {
@@ -58,7 +55,6 @@ export default function TheFooter() {
       ],
     },
     {
-      id: 4,
       title: "Get in touch",
       links: [
         { title: "Contact us", slug: "https://vasiti.com/contact" },
@@ -71,7 +67,7 @@ export default function TheFooter() {
 
   const linksList = (LINKS_ARRAY) =>
     LINKS_ARRAY.map((link) => (
-      <a href={link.slug} key={link.id} style={{ textDecoration: "none" }}>
+      <a href={link.slug} key={link.title} style={{ textDecoration: "none" }}>
         <Box py={1} color="white">
           {link.title}
         </Box>
@@ -148,7 +144,7 @@ export default function TheFooter() {
           justifyContent="between"
           justifyContent={{ sm: "center", md: "between" }}>
           {LINKS.map((parent) => (
-            <Box pt={2} width={{ sm: "1", md: "1 / 5" }}>
+            <Box pt={2} width={{ sm: "1", md: "1 / 5" }} key={parent.title}>
               <Box py={2} fontWeight="fontWeightBold">
                 {parent.title}
               </Box>
