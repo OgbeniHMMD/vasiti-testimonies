@@ -23,13 +23,15 @@ export default function TopNavLinks(props) {
               {props.title}
             </Box>
 
-            <Box my={1}>
-              <Button
-                size="small"
-                variant="outlined"
-                color={props.dark ? "secondary" : "grey.900"}>
-                {props.category}
-              </Button>
+            <Box
+              my={1}
+              p={0.5}
+              border={1}
+              component="span"
+              borderRadius={4}
+              color={props.dark ? "white" : "grey.900"}
+              borderColor={props.dark ? "secondary" : "grey.900"}>
+              {props.category}
             </Box>
 
             <Box

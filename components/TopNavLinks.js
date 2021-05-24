@@ -31,7 +31,7 @@ export default function TopNavLinks() {
   return (
     <nav>
       {!isMobile && (
-        <Box width={1} borderTop={1} borderBottom={1} borderColor="grey.200">
+        <Box width={1} borderColor="grey.200" borderTop={1} borderBottom={1}>
           <Container>
             <Box
               width={1}
