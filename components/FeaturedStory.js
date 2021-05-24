@@ -20,16 +20,18 @@ import {
 } from "@material-ui/core"
 
 import Attachment from "@material-ui/icons/Attachment"
+import { CheckBoxOutlineBlankOutlined } from "@material-ui/icons"
 
 export default function TopNavLinks(props) {
-  const [open, setOpen] = React.useState(false)
+  const [openForm, setOpenForm] = React.useState(false)
+  const [openSuccess, setOpenSuccess] = React.useState(false)
 
-  const handleClickOpen = () => {
-    setOpen(true)
+  const OPEN_FORM_DIALOG = () => {
+    setOpenForm(true)
   }
 
-  const handleClose = () => {
-    setOpen(false)
+  const CLOSE_FORM_DIALOG = () => {
+    setOpenForm(false)
   }
 
   return (
@@ -75,7 +77,7 @@ export default function TopNavLinks(props) {
                     size="large"
                     style={{ letterSpacing: 4 }}
                     color={props.dark ? "secondary" : "primary"}
-                    onClick={handleClickOpen}>
+                    onClick={OPEN_FORM_DIALOG}>
                     Share your own story
                   </Button>
                   <div>
@@ -103,144 +105,169 @@ export default function TopNavLinks(props) {
       </Box>
 
       <Dialog
-        open={open}
-        onClose={handleClose}
+        open={openForm}
+        onClose={CLOSE_FORM_DIALOG}
         aria-labelledby="form-dialog-title">
-        <Box p={2}>
+        <form autoComplete="off">
+          <Box p={2}>
+            <Box
+              p={3}
+              textAlign="center"
+              fontSize="h5.fontSize"
+              fontWeight="fontWeightBold">
+              Share your amazing story!
+            </Box>
+
+            <Box py={1}>
+              <label>
+                <Box color="grey.800" pb={1}>
+                  Upload your Picture
+                </Box>
+                <FormControl variant="outlined" style={{ width: "100%" }}>
+                  <OutlinedInput
+                    required
+                    id="outlined-adornment-password"
+                    type="file"
+                    // value={values.password}
+                    // onChange={handleChange("password")}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton edge="end">
+                          <Attachment />
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                  />
+                </FormControl>
+              </label>
+            </Box>
+
+            <Box py={1} display="flex">
+              <Box pr={3}>
+                <label>
+                  <Box color="grey.800" pb={1}>
+                    First Name
+                  </Box>
+                  <TextField
+                    required
+                    autoFocus
+                    variant="outlined"
+                    id="firstName"
+                    type="text"
+                    fullWidth
+                  />
+                </label>
+              </Box>
+
+              <Box>
+                <label>
+                  <Box color="grey.800" pb={1}>
+                    Last Name
+                  </Box>
+                  <TextField
+                    required
+                    type="text"
+                    fullWidth
+                    id="lastName"
+                    variant="outlined"
+                  />
+                </label>
+              </Box>
+            </Box>
+
+            <Box py={1}>
+              <label>
+                <Box color="grey.800" pb={1}>
+                  Share your story
+                </Box>
+                <TextField
+                  required
+                  id="story"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                />
+              </label>
+            </Box>
+
+            <FormControl component="row">
+              <Box
+                py={1}
+                width={1}
+                display="flex"
+                alignItems="center"
+                justifyContent="between">
+                <Box color="grey.800" py={1}>
+                  What did you interact with Vasiti as?
+                </Box>
+
+                <RadioGroup
+                  row
+                  required
+                  aria-label="category"
+                  name="category"
+                  defaultValue="Customer">
+                  <FormControlLabel
+                    value="Customer"
+                    control={<Radio color="primary" />}
+                    label="Customer"
+                    labelPlacement="start"
+                  />
+                  <FormControlLabel
+                    value="vendor"
+                    label="Vendor"
+                    labelPlacement="start"
+                    control={<Radio color="primary" />}
+                  />
+                </RadioGroup>
+              </Box>
+            </FormControl>
+
+            <Box py={1}>
+              <label>
+                <Box color="grey.800" pb={1}>
+                  City or Higher Institution (for Students)
+                </Box>
+                <TextField
+                  required
+                  id="school"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                />
+              </label>
+            </Box>
+
+            <DialogActions>
+              <Button
+                size="large"
+                type="submit"
+                // onClick={handleClose}
+                color="primary"
+                variant="contained">
+                Share your story!
+              </Button>
+            </DialogActions>
+          </Box>
+        </form>
+      </Dialog>
+
+      <Dialog
+        open={openForm}
+        onClose={CLOSE_FORM_DIALOG}
+        aria-labelledby="form-dialog-title">
+        <Box p={4}>
           <Box
-            p={3}
+            py={3}
             textAlign="center"
             fontSize="h5.fontSize"
             fontWeight="fontWeightBold">
-            Share your amazing story!
+            Thank you for sharing your story!
           </Box>
-
-          <Box py={1}>
-            <label>
-              <Box color="grey.800" pb={1}>
-                Upload your Picture
-              </Box>
-              <FormControl variant="outlined" style={{ width: "100%" }}>
-                <OutlinedInput
-                  id="outlined-adornment-password"
-                  type="file"
-                  // value={values.password}
-                  // onChange={handleChange("password")}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton edge="end">
-                        <Attachment />
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                />
-              </FormControl>
-            </label>
+          <Box>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Box>
-
-          <Box py={1} display="flex">
-            <Box pr={3}>
-              <label>
-                <Box color="grey.800" pb={1}>
-                  First Name
-                </Box>
-                <TextField
-                  autoFocus
-                  variant="outlined"
-                  id="firstName"
-                  type="text"
-                  fullWidth
-                />
-              </label>
-            </Box>
-
-            <Box>
-              <label>
-                <Box color="grey.800" pb={1}>
-                  Last Name
-                </Box>
-                <TextField
-                  autoFocus
-                  variant="outlined"
-                  id="lastName"
-                  type="text"
-                  fullWidth
-                />
-              </label>
-            </Box>
-          </Box>
-
-          <Box py={1}>
-            <label>
-              <Box color="grey.800" pb={1}>
-                Share your story
-              </Box>
-              <TextField
-                autoFocus
-                variant="outlined"
-                id="story"
-                type="text"
-                fullWidth
-              />
-            </label>
-          </Box>
-
-          <FormControl component="row">
-            <Box
-              py={1}
-              width={1}
-              display="flex"
-              alignItems="center"
-              justifyContent="between">
-              <Box color="grey.800" py={1}>
-                What did you interact with Vasiti as?
-              </Box>
-
-              <RadioGroup
-                row
-                aria-label="category"
-                name="category"
-                defaultValue="Customer">
-                <FormControlLabel
-                  value="Customer"
-                  control={<Radio color="primary" />}
-                  label="Customer"
-                  labelPlacement="start"
-                />
-                <FormControlLabel
-                  value="vendor"
-                  label="Vendor"
-                  labelPlacement="start"
-                  control={<Radio color="primary" />}
-                />
-              </RadioGroup>
-            </Box>
-          </FormControl>
-
-          <Box py={1}>
-            <label>
-              <Box color="grey.800" pb={1}>
-                City or Higher Institution (for Students)
-              </Box>
-              <TextField
-                autoFocus
-                variant="outlined"
-                id="school"
-                type="text"
-                fullWidth
-              />
-            </label>
-          </Box>
-
-          <DialogActions>
-            <Button
-              size="large"
-              onClick={handleClose}
-              color="primary"
-              variant="contained">
-              Share your story!
-            </Button>
-          </DialogActions>
         </Box>
       </Dialog>
     </div>
