@@ -6,14 +6,15 @@ import {
   Container,
   Dialog,
   DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   FormControl,
+  FormControlLabel,
+  FormLabel,
   IconButton,
   InputAdornment,
   Link,
   OutlinedInput,
+  Radio,
+  RadioGroup,
   TextField,
   Typography,
 } from "@material-ui/core"
@@ -117,7 +118,7 @@ export default function TopNavLinks(props) {
           <Box py={1}>
             <label>
               <Box color="grey.800" pb={1}>
-                Upload your Picture:
+                Upload your Picture
               </Box>
               <FormControl variant="outlined" style={{ width: "100%" }}>
                 <OutlinedInput
@@ -141,7 +142,7 @@ export default function TopNavLinks(props) {
             <Box pr={3}>
               <label>
                 <Box color="grey.800" pb={1}>
-                  First Name:
+                  First Name
                 </Box>
                 <TextField
                   autoFocus
@@ -156,7 +157,7 @@ export default function TopNavLinks(props) {
             <Box>
               <label>
                 <Box color="grey.800" pb={1}>
-                  Last Name:
+                  Last Name
                 </Box>
                 <TextField
                   autoFocus
@@ -172,7 +173,7 @@ export default function TopNavLinks(props) {
           <Box py={1}>
             <label>
               <Box color="grey.800" pb={1}>
-                Share your story:
+                Share your story
               </Box>
               <TextField
                 autoFocus
@@ -184,10 +185,42 @@ export default function TopNavLinks(props) {
             </label>
           </Box>
 
+          <FormControl component="row">
+            <Box
+              py={1}
+              width={1}
+              display="flex"
+              alignItems="center"
+              justifyContent="between">
+              <Box color="grey.800" py={1}>
+                What did you interact with Vasiti as?
+              </Box>
+
+              <RadioGroup
+                row
+                aria-label="category"
+                name="category"
+                defaultValue="Customer">
+                <FormControlLabel
+                  value="Customer"
+                  control={<Radio color="primary" />}
+                  label="Customer"
+                  labelPlacement="start"
+                />
+                <FormControlLabel
+                  value="vendor"
+                  label="Vendor"
+                  labelPlacement="start"
+                  control={<Radio color="primary" />}
+                />
+              </RadioGroup>
+            </Box>
+          </FormControl>
+
           <Box py={1}>
             <label>
               <Box color="grey.800" pb={1}>
-                City or Higher Institution (for Students):
+                City or Higher Institution (for Students)
               </Box>
               <TextField
                 autoFocus
