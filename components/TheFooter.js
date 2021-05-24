@@ -4,6 +4,67 @@ import Box from "@material-ui/core/Box"
 import { Button, Container, InputBase, Link, Paper } from "@material-ui/core"
 
 export default function TheFooter() {
+  const LINKS = [
+    {
+      id: 1,
+      title: "Company",
+      links: [
+        { title: "About Us", slug: "https://vasiti.com/about" },
+        { title: "Term of Use", slug: "https://vasiti.com/terms" },
+        { title: "Privacy Policy", slug: "https://vasiti.com/privacy-policy" },
+        { title: "QWERTY", slug: "#" },
+      ],
+    },
+    {
+      id: 2,
+      title: "Products",
+      links: [
+        { title: "About Us", slug: "https://vasiti.com/about" },
+        { title: "Term of Use", slug: "https://vasiti.com/marketplace" },
+        { title: "Privacy Policy", slug: "https://vasiti.com/marketplace" },
+        { title: "QWERTY", slug: "#" },
+      ],
+    },
+    {
+      id: 3,
+      title: "Career",
+      links: [
+        {
+          title: "Become a Campus Rep",
+          slug: "https://vasiti.com/campus-reps",
+        },
+        {
+          title: "Become a Vasiti Influencer",
+          slug: "https://magazine.vasiti.com/reporter",
+        },
+        {
+          title: "Become a Campus writer",
+          slug: "https://magazine.vasiti.com/",
+        },
+        { title: "Become an Affiliate", slug: "https://seller.vasiti.com/" },
+      ],
+    },
+    {
+      id: 4,
+      title: "Get in touch",
+      links: [
+        { title: "Contact us", slug: "https://vasiti.com/contact" },
+        { title: "Partner with us", slug: "#" },
+        { title: "Advertise with us", slug: "#" },
+        { title: "Help/FAQs", slug: "#" },
+      ],
+    },
+  ]
+
+  const linksList = (LINKS_ARRAY) =>
+    LINKS_ARRAY.map((link) => (
+      <a href={link.slug} key={link.id} style={{ textDecoration: "none" }}>
+        <Box py={1} color="white">
+          {link.title}
+        </Box>
+      </a>
+    ))
+
   return (
     <Box mt={4} width={1} bgcolor="grey.900">
       <Container>
@@ -71,22 +132,18 @@ export default function TheFooter() {
           width={1}
           color="white"
           display={{ xs: "block", md: "flex" }}
-          alignItems="center"
           justifyContent="between"
           justifyContent={{ sm: "center", md: "between" }}>
-          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
-            Join our community
-          </Box>
-          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
-            Join our community
-          </Box>
-          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
-            Join our community
-          </Box>
-          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
-            Join our community
-          </Box>
-          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 5" }}>
+          {LINKS.map((parent) => (
+            <Box pt={2} width={{ sm: "1", md: "1 / 5" }}>
+              <Box py={2} fontWeight="fontWeightBold">
+                {parent.title}
+              </Box>
+              {linksList(parent.links)}
+            </Box>
+          ))}
+
+          <Box pt={2} width={{ sm: "1", md: "1 / 5" }}>
             <Box py={2} fontWeight="fontWeightBold">
               Join our community
             </Box>
