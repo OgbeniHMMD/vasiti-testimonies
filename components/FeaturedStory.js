@@ -32,9 +32,12 @@ export default function TopNavLinks(props) {
 
   const CLOSE_FORM_DIALOG = () => {
     setDialogForm(false)
-    setDialogSuccess(true)
   }
 
+  const OPEN_SUCCESS_DIALOG = () => {
+    setDialogForm(false)
+    setDialogSuccess(true)
+  }
   const CLOSE_SUCCESS_DIALOG = () => {
     setDialogSuccess(false)
   }
@@ -113,7 +116,7 @@ export default function TopNavLinks(props) {
         open={dialogForm}
         onClose={CLOSE_FORM_DIALOG}
         aria-labelledby="form-dialog-title">
-        <form autoComplete="off" onSubmit={CLOSE_FORM_DIALOG}>
+        <form autoComplete="off" onSubmit={OPEN_SUCCESS_DIALOG}>
           <Box p={2}>
             <Box
               p={3}
@@ -133,8 +136,6 @@ export default function TopNavLinks(props) {
                     required
                     id="outlined-adornment-password"
                     type="file"
-                    // value={values.password}
-                    // onChange={handleChange("password")}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton edge="end">
@@ -211,7 +212,10 @@ export default function TopNavLinks(props) {
                   required
                   aria-label="category"
                   name="category"
-                  defaultValue="Customer">
+                  defaultValue="Customer"
+                  // value={category}
+                  // onChange={changeCategory}
+                >
                   <FormControlLabel
                     value="Customer"
                     control={<Radio color="primary" />}
@@ -243,7 +247,7 @@ export default function TopNavLinks(props) {
               </label>
             </Box>
 
-            <Box pt={4} display="flex" justifyContent="end">
+            <Box pt={4}>
               <DialogActions>
                 <Button
                   size="large"
