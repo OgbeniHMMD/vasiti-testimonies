@@ -5,14 +5,14 @@ import { Button, Container, InputBase, Link, Paper } from "@material-ui/core"
 
 export default function TheFooter() {
   return (
-    <Box mt={8} width={1} bgcolor="grey.900">
+    <Box mt={4} width={1} bgcolor="grey.900">
       <Container>
         <Box
           width={1}
           display={{ xs: "block", md: "flex" }}
           alignItems="center"
           justifyContent={{ sm: "center", md: "between" }}>
-          <Box pt={2} mt={-8} width={{ sm: "1", md: "1 / 2" }}>
+          <Box mt={-6} width={{ sm: "1", md: "1 / 2" }}>
             <img
               src="/img/subscribe-banner.png"
               style={{ maxWidth: "100%", margin: "auto 0" }}
@@ -35,22 +35,30 @@ export default function TheFooter() {
             </Box>
 
             <Box
-              p={1}
+              p={0.5}
               my={2}
               width={1}
-              bgcolor="#fff"
+              borderRadius={4}
+              bgcolor="grey.600"
               display="flex"
               justifyContent="between">
-              <Box flexGrow={1}>
+              <Box flexGrow={1} px={2}>
                 <InputBase
                   width={1}
+                  style={{ color: "white" }}
                   placeholder="enter your email address"
                   inputProps={{ "aria-label": "enter your email address" }}
                 />
               </Box>
 
               <Box flexShrink={1}>
-                <Button bgcolor="grey.800" type="submit" aria-label="search">
+                <Button
+                  type="submit"
+                  aria-label="search"
+                  variant="contained"
+                  color="secondary"
+                  disableElevation
+                  style={{ fontWeight: "bold" }}>
                   SUBSCRIBE
                 </Button>
               </Box>
