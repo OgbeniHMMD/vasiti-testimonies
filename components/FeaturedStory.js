@@ -14,7 +14,7 @@ export default function TopNavLinks(props) {
           alignItems="center"
           justifyContent="between"
           justifyContent={{ sm: "center", md: "between" }}>
-          <Box p={{ xs: 4, md: 8 }} width={{ sm: "1", md: "1 / 2" }}>
+          <Box p={{ xs: 4, md: 8 }} width={{ xs: "1", md: "1 / 2" }}>
             <Box
               py={2}
               fontSize="h4.fontSize"
@@ -50,7 +50,7 @@ export default function TopNavLinks(props) {
           <Box
             pt={2}
             mt={4}
-            width={{ sm: "1", md: "1 / 2" }}
+            width={{ xs: "1", md: "1 / 2" }}
             style={{
               maxWidth: "100%",
               background: `center Top / cover  no-repeat url(${props.eclipse})`,

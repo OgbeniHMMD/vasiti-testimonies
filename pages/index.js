@@ -16,26 +16,26 @@ export default function Home() {
       id: 1,
       name: "Joseph Ike",
       category: "CUSTOMER",
-      location: "in Ikeja",
-      avatar: "/img/avatar-joseph.png",
+      location: "In Ikeja",
+      avatar: "/img/avatar/01.png",
       story:
         "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
     },
     {
       id: 2,
-      name: "Joseph Ike",
+      name: "Adetola Fashina",
       category: "CUSTOMER",
-      location: "in Ikeja",
-      avatar: "/img/avatar-joseph.png",
+      location: "Ibadan",
+      avatar: "/img/avatar/02.png",
       story:
         "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
     },
     {
       id: 3,
-      name: "Joseph Ike",
+      name: "Emmanuel Fayemi",
       category: "VENDOR",
-      location: "in Ikeja",
-      avatar: "/img/avatar-joseph.png",
+      location: "In Akoka",
+      avatar: "/img/avatar/03.png",
       story:
         "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
     },
@@ -45,6 +45,7 @@ export default function Home() {
     <Testimony
       key={testimony.id}
       name={testimony.name}
+      avatar={testimony.avatar}
       category={testimony.category}
       location={testimony.location}
       story={testimony.story}
@@ -79,7 +80,7 @@ export default function Home() {
           />
 
           <Container>
-            <Box display="flex" justifyContent="between">
+            <Box justifyContent="between" display={{ xs: "block", md: "flex" }}>
               {testimonies}
             </Box>
           </Container>
@@ -93,7 +94,7 @@ export default function Home() {
           />
 
           <Container>
-            <Box display="flex" justifyContent="between">
+            <Box justifyContent="between" display={{ xs: "block", md: "flex" }}>
               {testimonies}
             </Box>
           </Container>

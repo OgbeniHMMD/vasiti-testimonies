@@ -1,13 +1,12 @@
 import React from "react"
 
 import Box from "@material-ui/core/Box"
-import { Avatar, Typography } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 
 export default function TopNavLinks(props) {
   return (
-    <Box p={{ xs: 2, md: 4, lg: 8 }} width={1 / 3}>
-      <Avatar size="200px" alt={props.name} src={props.avatar} />
-
+    <Box p={{ xs: 2, md: 4 }} width={{ xs: "1", md: "1 / 2", lg: "1 / 3" }}>
+      <img width="200" height="200" alt={props.name} src={props.avatar} />
       <Box
         pt={1}
         fontSize="h4.fontSize"
@@ -22,6 +21,7 @@ export default function TopNavLinks(props) {
         </Box>
 
         <Box
+          p={1}
           mx={2}
           component="span"
           borderRadius={4}

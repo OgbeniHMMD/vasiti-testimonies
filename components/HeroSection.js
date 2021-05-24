@@ -12,7 +12,7 @@ export default function TopNavLinks() {
           alignItems="center"
           justifyContent="around"
           display={{ xs: "block", md: "flex" }}>
-          <Box pt={2} width={{ sm: "1", md: "1 / 2" }}>
+          <Box pt={2} width={{ xs: "1", md: "1 / 2" }}>
             <Box fontSize="h3.fontSize" fontWeight="fontWeightBold">
               Amazing
               <br />
@@ -25,7 +25,7 @@ export default function TopNavLinks() {
               </Typography>
             </Box>
           </Box>
-          <Box pt={2} width={{ sm: "1", md: "1 / 2" }}>
+          <Box pt={2} width={{ xs: "1", md: "1 / 2" }}>
             <img
               src="/img/hero-1.png"
               style={{ maxWidth: "100%", margin: "auto 0" }}
