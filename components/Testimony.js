@@ -1,11 +1,11 @@
 import React from "react"
 
 import Box from "@material-ui/core/Box"
-import { Typography } from "@material-ui/core"
+import { Grid, Typography } from "@material-ui/core"
 
 export default function TopNavLinks(props) {
   return (
-    <Box p={{ xs: 2, md: 4 }} width={{ xs: "1", md: "1 / 2", lg: "1 / 3" }}>
+    <Grid item xs={12} md={6} lg={4}>
       <img width="200" height="200" alt={props.name} src={props.avatar} />
       <Box
         pt={1}
@@ -34,6 +34,6 @@ export default function TopNavLinks(props) {
       <Box py={2} fontSize="1.2em" letterSpacing={1} color="grey.900">
         <Typography variant="subtitle1"> {props.story}</Typography>
       </Box>
-    </Box>
+    </Grid>
   )
 }

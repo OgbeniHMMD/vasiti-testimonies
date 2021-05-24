@@ -1,6 +1,6 @@
 import Head from "next/head"
-import styles from "../styles/Home.module.css"
 
+import { Box, Container, Grid, Typography } from "@material-ui/core"
 import TopNavBar from "../components/TopNavBar"
 import TopNavLinks from "../components/TopNavLinks"
 import HeroSection from "../components/HeroSection"
@@ -8,40 +8,25 @@ import FeaturedStory from "../components/FeaturedStory"
 import Testimony from "../components/Testimony"
 import TheFooter from "../components/TheFooter"
 
-import { Box, Container, Typography } from "@material-ui/core"
+import stories1 from "../src/assets/stories1.json"
+import stories2 from "../src/assets/stories2.json"
 
 export default function Home() {
-  const Testimonies = [
-    {
-      id: 1,
-      name: "Joseph Ike",
-      category: "CUSTOMER",
-      location: "In Ikeja",
-      avatar: "/img/avatar/01.png",
-      story:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-    {
-      id: 2,
-      name: "Adetola Fashina",
-      category: "CUSTOMER",
-      location: "Ibadan",
-      avatar: "/img/avatar/02.png",
-      story:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-    {
-      id: 3,
-      name: "Emmanuel Fayemi",
-      category: "VENDOR",
-      location: "In Akoka",
-      avatar: "/img/avatar/03.png",
-      story:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-  ]
+  const Testimonies1 = stories1
+  const Testimonies2 = stories2
 
-  const testimonies = Testimonies.map((testimony) => (
+  const testimonies1 = Testimonies1.map((testimony) => (
+    <Testimony
+      key={testimony.id}
+      name={testimony.name}
+      avatar={testimony.avatar}
+      category={testimony.category}
+      location={testimony.location}
+      story={testimony.story}
+    />
+  ))
+
+  const testimonies2 = Testimonies1.map((testimony) => (
     <Testimony
       key={testimony.id}
       name={testimony.name}
@@ -53,7 +38,7 @@ export default function Home() {
   ))
 
   return (
-    <div className={styles.container}>
+    <body>
       <Head>
         <title>Create Next App</title>
         <meta
@@ -80,8 +65,10 @@ export default function Home() {
           />
 
           <Container>
-            <Box justifyContent="between" display={{ xs: "block", md: "flex" }}>
-              {testimonies}
+            <Box py={4}>
+              <Grid container spacing={4}>
+                {testimonies1}
+              </Grid>
             </Box>
           </Container>
 
@@ -94,8 +81,10 @@ export default function Home() {
           />
 
           <Container>
-            <Box justifyContent="between" display={{ xs: "block", md: "flex" }}>
-              {testimonies}
+            <Box py={4}>
+              <Grid container spacing={4}>
+                {testimonies2}
+              </Grid>
             </Box>
           </Container>
         </section>
@@ -104,6 +93,6 @@ export default function Home() {
           <TheFooter />
         </footer>
       </main>
-    </div>
+    </body>
   )
 }
