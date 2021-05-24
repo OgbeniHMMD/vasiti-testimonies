@@ -158,6 +158,7 @@ export default function TopNavLinks(props) {
                 <FormControl variant="outlined" style={{ width: "100%" }}>
                   <OutlinedInput
                     required
+                    autoFocus
                     type="file"
                     id="outlined-adornment-password"
                     name="attachment"
@@ -183,7 +184,6 @@ export default function TopNavLinks(props) {
                   </Box>
                   <TextField
                     required
-                    autoFocus
                     variant="outlined"
                     id="firstName"
                     type="text"
