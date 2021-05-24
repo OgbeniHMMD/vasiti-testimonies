@@ -19,8 +19,7 @@ import {
   Typography,
 } from "@material-ui/core"
 
-import Attachment from "@material-ui/icons/Attachment"
-import Close from "@material-ui/icons/Close"
+import { Attachment, Close } from "@material-ui/icons"
 
 export default function TopNavLinks(props) {
   const [dialogForm, setDialogForm] = React.useState(false)

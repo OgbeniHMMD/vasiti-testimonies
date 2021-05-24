@@ -1,7 +1,16 @@
 import React from "react"
 
 import Box from "@material-ui/core/Box"
-import { Button, Container, InputBase, Link, Paper } from "@material-ui/core"
+import {
+  Button,
+  Container,
+  IconButton,
+  InputBase,
+  Link,
+  Paper,
+} from "@material-ui/core"
+
+import { Facebook, LinkedIn, Twitter, Instagram } from "@material-ui/icons"
 
 export default function TheFooter() {
   const LINKS = [
@@ -151,7 +160,29 @@ export default function TheFooter() {
             <Box py={2} fontWeight="fontWeightBold">
               Join our community
             </Box>
-            <div>Email Newsletter</div>
+            <Box>
+              <IconButton
+                color="secondary"
+                href="https://www.facebook.com/VasitiMarketplace/">
+                <Facebook />
+              </IconButton>
+              <IconButton
+                color="secondary"
+                href="https://www.instagram.com/vasitidotcom/?hl=en">
+                <Instagram />
+              </IconButton>
+              <IconButton
+                color="secondary"
+                href="https://twitter.com/vasitidotcom">
+                <Twitter />
+              </IconButton>
+              <IconButton
+                color="secondary"
+                href="https://www.linkedin.com/company/vasiti.com">
+                <LinkedIn />
+              </IconButton>
+            </Box>
+            <Box py={3}>Email Newsletter</Box>
           </Box>
         </Box>
       </Container>
