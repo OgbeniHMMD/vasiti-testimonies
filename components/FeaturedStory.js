@@ -26,6 +26,9 @@ export default function TopNavLinks(props) {
   const [dialogForm, setDialogForm] = React.useState(false)
   const [dialogSuccess, setDialogSuccess] = React.useState(false)
 
+  const [attachment, setAttachment] = React.useState(null)
+  const [category, setCategory] = React.useState("customer")
+
   const OPEN_FORM_DIALOG = () => {
     setDialogForm(true)
   }
@@ -38,8 +41,13 @@ export default function TopNavLinks(props) {
     setDialogForm(false)
     setDialogSuccess(true)
   }
+
   const CLOSE_SUCCESS_DIALOG = () => {
     setDialogSuccess(false)
+  }
+
+  const changeCategory = (event) => {
+    setCategory(event.target.value)
   }
 
   return (
@@ -215,11 +223,10 @@ export default function TopNavLinks(props) {
                   aria-label="category"
                   name="category"
                   defaultValue="Customer"
-                  // value={category}
-                  // onChange={changeCategory}
-                >
+                  value={category}
+                  onChange={changeCategory}>
                   <FormControlLabel
-                    value="Customer"
+                    value="customer"
                     control={<Radio color="primary" />}
                     label="Customer"
                     labelPlacement="start"
@@ -234,20 +241,22 @@ export default function TopNavLinks(props) {
               </Box>
             </FormControl>
 
-            <Box py={1}>
-              <label>
-                <Box color="grey.800" pb={1}>
-                  City or Higher Institution (for Students)
-                </Box>
-                <TextField
-                  required
-                  id="school"
-                  type="text"
-                  fullWidth
-                  variant="outlined"
-                />
-              </label>
-            </Box>
+            {category == "vendor" && (
+              <Box py={1}>
+                <label>
+                  <Box color="grey.800" pb={1}>
+                    City or Higher Institution (for Students)
+                  </Box>
+                  <TextField
+                    required
+                    id="school"
+                    type="text"
+                    fullWidth
+                    variant="outlined"
+                  />
+                </label>
+              </Box>
+            )}
 
             <Box pt={4}>
               <DialogActions>
