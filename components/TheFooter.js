@@ -4,6 +4,7 @@ import Box from "@material-ui/core/Box"
 import {
   Button,
   Container,
+  Grid,
   IconButton,
   InputBase,
   Link,
@@ -135,51 +136,53 @@ export default function TheFooter() {
             </Box>
           </Box>
         </Box>
+      </Container>
 
-        <Box
-          py={8}
-          width={1}
-          color="white"
-          display={{ xs: "block", md: "flex" }}
-          justifyContent="between"
-          justifyContent={{ sm: "center", md: "between" }}>
-          {LINKS.map((parent) => (
-            <Box pt={2} width={{ sm: "1", md: "1 / 5" }} key={parent.title}>
-              <Box py={2} fontWeight="fontWeightBold">
-                {parent.title}
+      <Container>
+        <Box py={8}>
+          <Grid container spacing={4}>
+            {LINKS.map((parent) => (
+              <Grid item xs={12} sm={6} md={3} lg={2} key={parent.title}>
+                <Box pt={2}>
+                  <Box py={2} fontWeight="fontWeightBold" color="white">
+                    {parent.title}
+                  </Box>
+                  {linksList(parent.links)}
+                </Box>
+              </Grid>
+            ))}
+
+            <Grid item xs={12} sm={6} md={3} lg={4}>
+              <Box py={2} fontWeight="fontWeightBold" color="white">
+                Join our community
               </Box>
-              {linksList(parent.links)}
-            </Box>
-          ))}
-
-          <Box pt={2} width={{ sm: "1", md: "1 / 5" }}>
-            <Box py={2} fontWeight="fontWeightBold">
-              Join our community
-            </Box>
-            <Box>
-              <IconButton
-                color="secondary"
-                href="https://www.facebook.com/VasitiMarketplace/">
-                <Facebook />
-              </IconButton>
-              <IconButton
-                color="secondary"
-                href="https://www.instagram.com/vasitidotcom/?hl=en">
-                <Instagram />
-              </IconButton>
-              <IconButton
-                color="secondary"
-                href="https://twitter.com/vasitidotcom">
-                <Twitter />
-              </IconButton>
-              <IconButton
-                color="secondary"
-                href="https://www.linkedin.com/company/vasiti.com">
-                <LinkedIn />
-              </IconButton>
-            </Box>
-            <Box py={3}>Email Newsletter</Box>
-          </Box>
+              <Box>
+                <IconButton
+                  color="secondary"
+                  href="https://www.facebook.com/VasitiMarketplace/">
+                  <Facebook />
+                </IconButton>
+                <IconButton
+                  color="secondary"
+                  href="https://www.instagram.com/vasitidotcom/?hl=en">
+                  <Instagram />
+                </IconButton>
+                <IconButton
+                  color="secondary"
+                  href="https://twitter.com/vasitidotcom">
+                  <Twitter />
+                </IconButton>
+                <IconButton
+                  color="secondary"
+                  href="https://www.linkedin.com/company/vasiti.com">
+                  <LinkedIn />
+                </IconButton>
+              </Box>
+              <Box py={3} color="white">
+                Email Newsletter
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
       </Container>
     </Box>
