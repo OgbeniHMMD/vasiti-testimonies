@@ -12,17 +12,21 @@ export default function TheFooter() {
         { title: "About Us", slug: "https://vasiti.com/about" },
         { title: "Term of Use", slug: "https://vasiti.com/terms" },
         { title: "Privacy Policy", slug: "https://vasiti.com/privacy-policy" },
-        { title: "QWERTY", slug: "#" },
+        { title: "Press & Media", slug: "#/press" },
       ],
     },
     {
       id: 2,
       title: "Products",
       links: [
-        { title: "About Us", slug: "https://vasiti.com/about" },
-        { title: "Term of Use", slug: "https://vasiti.com/marketplace" },
-        { title: "Privacy Policy", slug: "https://vasiti.com/marketplace" },
-        { title: "QWERTY", slug: "#" },
+        { title: "Marketplace", slug: "https://vasiti.com/marketplace" },
+        { title: "Magazine", slug: "https://magazine.vasiti.com/" },
+        { title: "Seller", slug: "https://www.seller.vasiti.com/" },
+        { title: "Wholesale", slug: "https://wholesale.vasiti.com/" },
+        {
+          title: "Services",
+          slug: "https://vasiti.com/category/creative_services",
+        },
       ],
     },
     {
