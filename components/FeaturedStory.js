@@ -20,7 +20,7 @@ import {
 } from "@material-ui/core"
 
 import Attachment from "@material-ui/icons/Attachment"
-import { CheckBoxOutlineBlankOutlined } from "@material-ui/icons"
+import Close from "@material-ui/icons/Close"
 
 export default function TopNavLinks(props) {
   const [dialogForm, setDialogForm] = React.useState(false)
@@ -164,7 +164,7 @@ export default function TopNavLinks(props) {
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton edge="end">
-                          <Attachment />
+                          {formValues.attachment ? <Close /> : <Attachment />}
                         </IconButton>
                       </InputAdornment>
                     }
