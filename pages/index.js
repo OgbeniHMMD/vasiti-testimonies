@@ -15,26 +15,16 @@ export default function Home() {
   const testimoniesJSON1 = stories1
   const testimoniesJSON2 = stories2
 
-  const testimonies1 = testimoniesJSON1.map((testimony) => (
-    <Testimony
-      key={testimony.id}
-      name={testimony.name}
-      avatar={testimony.avatar}
-      category={testimony.category}
-      location={testimony.location}
-      story={testimony.story}
-    />
-  ))
-
-  const testimonies2 = testimoniesJSON2.map((testimony) => (
-    <Testimony
-      key={testimony.id}
-      name={testimony.name}
-      avatar={testimony.avatar}
-      category={testimony.category}
-      story={testimony.story}
-    />
-  ))
+  const testimonies = (JSON_FILE) =>
+    JSON_FILE.map((testimony) => (
+      <Testimony
+        key={testimony.id}
+        name={testimony.name}
+        avatar={testimony.avatar}
+        category={testimony.category}
+        story={testimony.story}
+      />
+    ))
 
   return (
     <body>
@@ -66,7 +56,7 @@ export default function Home() {
           <Container>
             <Box py={4}>
               <Grid container spacing={4}>
-                {testimonies1}
+                {testimonies(testimoniesJSON1)}
               </Grid>
             </Box>
           </Container>
@@ -82,7 +72,7 @@ export default function Home() {
           <Container>
             <Box py={4}>
               <Grid container spacing={4}>
-                {testimonies2}
+                {testimonies(testimoniesJSON2)}
               </Grid>
             </Box>
           </Container>
