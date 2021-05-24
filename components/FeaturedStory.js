@@ -55,7 +55,9 @@ export default function TopNavLinks(props) {
     setDialogForm(false)
   }
 
-  const OPEN_SUCCESS_DIALOG = () => {
+  const SUBMIT_STORY = () => {
+    event.preventDefault()
+
     setDialogForm(false)
     setDialogSuccess(true)
   }
@@ -138,7 +140,7 @@ export default function TopNavLinks(props) {
         open={dialogForm}
         onClose={CLOSE_FORM_DIALOG}
         aria-labelledby="form-dialog-title">
-        <form autoComplete="off" onSubmit={OPEN_SUCCESS_DIALOG}>
+        <form autoComplete="off" onSubmit={SUBMIT_STORY}>
           <Box p={2}>
             <Box
               p={3}
