@@ -1,7 +1,7 @@
 import React from "react"
 
 import Box from "@material-ui/core/Box"
-import { Container, Link } from "@material-ui/core"
+import { Container, Link, Typography } from "@material-ui/core"
 
 export default function TopNavLinks() {
   return (
@@ -18,9 +18,11 @@ export default function TopNavLinks() {
               <br />
               Experiences from Our Wonderful Customers
             </Box>
-            <Box py={2} fontSize="h6.fontSize">
-              Here is what customers and vendors are saying about us, you can
-              share your stories with us too.
+            <Box py={2} fontSize="h6.fontSize" color="grey.800">
+              <Typography variant="subtitle1">
+                Here is what customers and vendors are saying about us, you can
+                share your stories with us too.
+              </Typography>
             </Box>
           </Box>
           <Box pt={2} width={{ sm: "1", md: "1 / 2" }}>

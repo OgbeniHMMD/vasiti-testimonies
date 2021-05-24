@@ -1,7 +1,7 @@
 import React from "react"
 
 import Box from "@material-ui/core/Box"
-import { Button, Container, Link } from "@material-ui/core"
+import { Button, Container, Link, Typography } from "@material-ui/core"
 
 export default function TopNavLinks(props) {
   return (
@@ -24,7 +24,7 @@ export default function TopNavLinks(props) {
             </Box>
 
             <Box
-              p={0.5}
+              p={1}
               border={1}
               component="span"
               borderRadius={4}
@@ -38,7 +38,7 @@ export default function TopNavLinks(props) {
               fontSize="1.2em"
               letterSpacing={1}
               color={props.dark ? "grey.200" : "grey.900"}>
-              {props.story}
+              <Typography variant="subtitle1">{props.story}</Typography>
             </Box>
             <Box>
               <Button size="large" color="primary">
