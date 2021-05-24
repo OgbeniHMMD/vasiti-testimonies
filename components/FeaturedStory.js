@@ -16,7 +16,7 @@ export default function TopNavLinks(props) {
           justifyContent={{ sm: "center", md: "between" }}>
           <Box p={{ xs: 4, md: 8 }} width={{ sm: "1", md: "1 / 2" }}>
             <Box
-              pt={2}
+              py={2}
               fontSize="h4.fontSize"
               fontWeight="fontWeightBold"
               color={props.dark ? "white" : "grey.900"}>
@@ -24,7 +24,6 @@ export default function TopNavLinks(props) {
             </Box>
 
             <Box
-              my={1}
               p={0.5}
               border={1}
               component="span"
@@ -35,13 +34,16 @@ export default function TopNavLinks(props) {
             </Box>
 
             <Box
-              py={2}
-              fontSize="h6.fontSize"
+              py={4}
+              fontSize="1.2em"
+              letterSpacing={1}
               color={props.dark ? "grey.200" : "grey.900"}>
               {props.story}
             </Box>
             <Box>
-              <Button color="primary">Share your own story!</Button>
+              <Button size="large" color="primary">
+                Share your own story!
+              </Button>
             </Box>
           </Box>
 
