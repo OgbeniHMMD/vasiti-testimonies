@@ -5,9 +5,52 @@ import TopNavBar from "../components/TopNavBar"
 import TopNavLinks from "../components/TopNavLinks"
 import HeroSection from "../components/HeroSection"
 import FeaturedStory from "../components/FeaturedStory"
+import Testimony from "../components/Testimony"
 import TheFooter from "../components/TheFooter"
 
+import { Box, Container, Typography } from "@material-ui/core"
+
 export default function Home() {
+  const Testimonies = [
+    {
+      id: 1,
+      name: "Joseph Ike",
+      category: "CUSTOMER",
+      location: "in Ikeja",
+      avatar: "/img/avatar-joseph.png",
+      story:
+        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+    },
+    {
+      id: 2,
+      name: "Joseph Ike",
+      category: "CUSTOMER",
+      location: "in Ikeja",
+      avatar: "/img/avatar-joseph.png",
+      story:
+        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+    },
+    {
+      id: 3,
+      name: "Joseph Ike",
+      category: "VENDOR",
+      location: "in Ikeja",
+      avatar: "/img/avatar-joseph.png",
+      story:
+        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+    },
+  ]
+
+  const testimonies = Testimonies.map((testimony) => (
+    <Testimony
+      key={testimony.id}
+      name={testimony.name}
+      category={testimony.category}
+      location={testimony.location}
+      story={testimony.story}
+    />
+  ))
+
   return (
     <div className={styles.container}>
       <Head>
@@ -35,6 +78,12 @@ export default function Home() {
             story="I had the best experience shopping with Vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back! I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back!"
           />
 
+          <Container>
+            <Box display="flex" justifyContent="between">
+              {testimonies}
+            </Box>
+          </Container>
+
           <FeaturedStory
             category="vendor"
             title="Josiah’s Experience"
@@ -42,6 +91,12 @@ export default function Home() {
             photo="/img/woman-shoppingbag-card.png"
             story="I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back! I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back!"
           />
+
+          <Container>
+            <Box display="flex" justifyContent="between">
+              {testimonies}
+            </Box>
+          </Container>
         </section>
 
         <footer>
