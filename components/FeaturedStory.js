@@ -41,9 +41,17 @@ export default function TopNavLinks(props) {
               <Typography variant="subtitle1">{props.story}</Typography>
             </Box>
             <Box>
-              <Button size="large" color="primary">
-                Share your own story!
-              </Button>
+              <span>
+                <Button
+                  size="large"
+                  style={{ letterSpacing: 4 }}
+                  color={props.dark ? "secondary" : "primary"}>
+                  Share your own story
+                </Button>{" "}
+                <div>
+                  <img src="/img/whip.png" />
+                </div>
+              </span>
             </Box>
           </Box>
 

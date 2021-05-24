@@ -12,10 +12,10 @@ import stories1 from "../src/assets/stories1.json"
 import stories2 from "../src/assets/stories2.json"
 
 export default function Home() {
-  const Testimonies1 = stories1
-  const Testimonies2 = stories2
+  const testimoniesJSON1 = stories1
+  const testimoniesJSON2 = stories2
 
-  const testimonies1 = Testimonies1.map((testimony) => (
+  const testimonies1 = testimoniesJSON1.map((testimony) => (
     <Testimony
       key={testimony.id}
       name={testimony.name}
@@ -26,13 +26,12 @@ export default function Home() {
     />
   ))
 
-  const testimonies2 = Testimonies1.map((testimony) => (
+  const testimonies2 = testimoniesJSON2.map((testimony) => (
     <Testimony
       key={testimony.id}
       name={testimony.name}
       avatar={testimony.avatar}
       category={testimony.category}
-      location={testimony.location}
       story={testimony.story}
     />
   ))

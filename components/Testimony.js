@@ -16,13 +16,14 @@ export default function TopNavLinks(props) {
       </Box>
 
       <Box py={1} display="flex" alignItems="center">
-        <Box fontWeight="fontWeightMedium" color="grey.900">
-          {props.location}
-        </Box>
+        {props.location && (
+          <Box mr={2} fontWeight="fontWeightMedium" color="grey.900">
+            {props.location}
+          </Box>
+        )}
 
         <Box
           p={1}
-          mx={2}
           component="span"
           borderRadius={4}
           color={props.category == "CUSTOMER" ? "#0D019A" : "#049A01"}
