@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Temi Obadofin",
-    "category": "CUSTOMER",
+    "category": "customer",
     "location": "In Ikeja",
     "avatar": "/img/avatar/07.png",
     "story": "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim."
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "name": "Promise Ejiofor",
-    "category": "CUSTOMER",
+    "category": "customer",
     "location": "Ibadan",
     "avatar": "/img/avatar/08.png",
     "story": "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim."
@@ -18,28 +18,28 @@
   {
     "id": 3,
     "name": "Feyisola Arinola",
-    "category": "CUSTOMER",
+    "category": "customer",
     "avatar": "/img/avatar/09.png",
     "story": "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim."
   },
   {
     "id": 4,
     "name": "Karen Ibeh",
-    "category": "VENDOR",
+    "category": "vendor",
     "avatar": "/img/avatar/10.png",
     "story": "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim."
   },
   {
     "id": 5,
     "name": "Oluchi Uzo",
-    "category": "VENDOR",
+    "category": "vendor",
     "avatar": "/img/avatar/11.png",
     "story": "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim."
   },
   {
     "id": 6,
     "name": "Amos Okafor",
-    "category": "VENDOR",
+    "category": "vendor",
     "avatar": "/img/avatar/12.png",
     "story": "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim."
   }

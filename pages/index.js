@@ -1,5 +1,8 @@
 import Head from "next/head"
 
+import React from "react"
+import store from "../store/stories"
+
 import { Box, Container, Grid, Typography } from "@material-ui/core"
 import TopNavBar from "../components/TopNavBar"
 import TopNavLinks from "../components/TopNavLinks"
@@ -8,17 +11,21 @@ import FeaturedStory from "../components/FeaturedStory"
 import Testimony from "../components/Testimony"
 import TheFooter from "../components/TheFooter"
 
-import stories1 from "../src/assets/stories1.json"
-import stories2 from "../src/assets/stories2.json"
+import StaticTestimonies from "../src/assets/stories2.json"
 
 export default function Home() {
-  const testimoniesJSON1 = stories1
-  const testimoniesJSON2 = stories2
+  const staticTestimonies = StaticTestimonies
+  const [statefulTestimonies, saveTestimonies] = React.useState(
+    store.getState()
+  )
+
+  store.subscribe(() => saveTestimonies(store.getState()))
+  store.subscribe(() => console.log(statefulTestimonies))
 
   const testimonies = (JSON_FILE) =>
-    JSON_FILE.map((testimony) => (
+    JSON_FILE.map((testimony, index) => (
       <Testimony
-        key={testimony.id}
+        key={index}
         name={testimony.name}
         avatar={testimony.avatar}
         category={testimony.category}
@@ -56,7 +63,7 @@ export default function Home() {
           <Container>
             <Box py={4}>
               <Grid container spacing={4}>
-                {testimonies(testimoniesJSON1)}
+                {testimonies(statefulTestimonies)}
               </Grid>
             </Box>
           </Container>
@@ -72,7 +79,7 @@ export default function Home() {
           <Container>
             <Box py={4}>
               <Grid container spacing={4}>
-                {testimonies(testimoniesJSON2)}
+                {testimonies(staticTestimonies)}
               </Grid>
             </Box>
           </Container>

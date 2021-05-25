@@ -1,4 +1,5 @@
 import React from "react"
+import store from "../store/stories"
 
 import Box from "@material-ui/core/Box"
 import {
@@ -26,8 +27,8 @@ export default function TopNavLinks(props) {
   const [dialogSuccess, setDialogSuccess] = React.useState(false)
 
   const initialFormValues = {
-    firstName: "x",
-    lastName: "y",
+    firstName: "",
+    lastName: "",
     category: "customer",
     attachment: null,
     story: "",
@@ -58,6 +59,11 @@ export default function TopNavLinks(props) {
     event.preventDefault()
 
     setDialogForm(false)
+
+    const payload = formValues
+    payload.name = `${formValues.firstName} ${formValues.lastName}`
+    payload.avatar = `https://picsum.photos/200`
+    store.dispatch({ type: "ADD_STORY", payload: formValues })
     setDialogSuccess(true)
   }
 
@@ -134,7 +140,6 @@ export default function TopNavLinks(props) {
           </Box>
         </Container>
       </Box>
-
       <Dialog
         open={dialogForm}
         onClose={CLOSE_FORM_DIALOG}
@@ -233,41 +238,39 @@ export default function TopNavLinks(props) {
               </label>
             </Box>
 
-            <FormControl component="row">
-              <Box
-                py={1}
-                width={1}
-                display="flex"
-                alignItems="center"
-                justifyContent="between">
-                <Box color="grey.800" py={1}>
-                  What did you interact with Vasiti as?
-                </Box>
-
-                <RadioGroup
-                  row
-                  required
-                  aria-label="category"
-                  name="category"
-                  defaultValue="Customer"
-                  name="category"
-                  onBlur={handleInputValue}
-                  onChange={handleInputValue}>
-                  <FormControlLabel
-                    value="customer"
-                    control={<Radio color="primary" />}
-                    label="Customer"
-                    labelPlacement="start"
-                  />
-                  <FormControlLabel
-                    value="vendor"
-                    label="Vendor"
-                    labelPlacement="start"
-                    control={<Radio color="primary" />}
-                  />
-                </RadioGroup>
+            <Box
+              py={1}
+              width={1}
+              display="flex"
+              alignItems="center"
+              justifyContent="between">
+              <Box color="grey.800" py={1}>
+                What did you interact with Vasiti as?
               </Box>
-            </FormControl>
+
+              <RadioGroup
+                row
+                required
+                aria-label="category"
+                name="category"
+                defaultValue="Customer"
+                name="category"
+                onBlur={handleInputValue}
+                onChange={handleInputValue}>
+                <FormControlLabel
+                  value="customer"
+                  control={<Radio color="primary" />}
+                  label="Customer"
+                  labelPlacement="start"
+                />
+                <FormControlLabel
+                  value="vendor"
+                  label="Vendor"
+                  labelPlacement="start"
+                  control={<Radio color="primary" />}
+                />
+              </RadioGroup>
+            </Box>
 
             {formValues.category == "vendor" && (
               <Box py={1}>
@@ -303,7 +306,6 @@ export default function TopNavLinks(props) {
           </Box>
         </form>
       </Dialog>
-
       <Dialog
         open={dialogSuccess}
         onClose={CLOSE_SUCCESS_DIALOG}

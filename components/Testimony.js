@@ -26,8 +26,8 @@ export default function TopNavLinks(props) {
           p={1}
           component="span"
           borderRadius={4}
-          color={props.category == "CUSTOMER" ? "#0D019A" : "#049A01"}
-          bgcolor={props.category == "CUSTOMER" ? "#EEF8FF" : "#F0FFEE"}>
+          color={props.category == "customer" ? "#0D019A" : "#049A01"}
+          bgcolor={props.category == "customer" ? "#EEF8FF" : "#F0FFEE"}>
           {props.category}
         </Box>
       </Box>
