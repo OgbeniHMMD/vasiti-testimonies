@@ -6,7 +6,14 @@ import { Grid, Typography } from "@material-ui/core"
 export default function TopNavLinks(props) {
   return (
     <Grid item xs={12} md={6} lg={4}>
-      <img width="200" height="200" alt={props.name} src={props.avatar} />
+      <img
+        width="200"
+        height="200"
+        alt={props.name}
+        src={props.avatar}
+        style={{ borderRadius: "50%" }}
+      />
+
       <Box
         pt={1}
         fontSize="h4.fontSize"

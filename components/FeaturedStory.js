@@ -9,10 +9,8 @@ import {
   DialogActions,
   FormControl,
   FormControlLabel,
-  FormLabel,
   IconButton,
   InputAdornment,
-  Link,
   OutlinedInput,
   Radio,
   RadioGroup,
@@ -30,9 +28,10 @@ export default function TopNavLinks(props) {
     firstName: "",
     lastName: "",
     category: "customer",
-    attachment: null,
+    avatar: null,
     story: "",
     institution: "",
+    avatar: `https://picsum.photos/200`,
   }
 
   // We'll update "values" as the form updates
@@ -62,7 +61,7 @@ export default function TopNavLinks(props) {
 
     const payload = formValues
     payload.name = `${formValues.firstName} ${formValues.lastName}`
-    payload.avatar = `https://picsum.photos/200`
+
     store.dispatch({ type: "ADD_STORY", payload: formValues })
     setDialogSuccess(true)
   }
@@ -165,13 +164,13 @@ export default function TopNavLinks(props) {
                     autoFocus
                     type="file"
                     id="outlined-adornment-password"
-                    name="attachment"
+                    name="avatar"
                     onBlur={handleInputValue}
                     onChange={handleInputValue}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton edge="end">
-                          {formValues.attachment ? <Close /> : <Attachment />}
+                          {formValues.avatar ? <Close /> : <Attachment />}
                         </IconButton>
                       </InputAdornment>
                     }
@@ -306,6 +305,7 @@ export default function TopNavLinks(props) {
           </Box>
         </form>
       </Dialog>
+
       <Dialog
         open={dialogSuccess}
         onClose={CLOSE_SUCCESS_DIALOG}

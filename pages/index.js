@@ -1,9 +1,9 @@
 import Head from "next/head"
 
 import React from "react"
-import store from "../store/stories"
+import { useSelector } from "react-redux"
 
-import { Box, Container, Grid, Typography } from "@material-ui/core"
+import { Box, Container, Grid } from "@material-ui/core"
 import TopNavBar from "../components/TopNavBar"
 import TopNavLinks from "../components/TopNavLinks"
 import HeroSection from "../components/HeroSection"
@@ -15,12 +15,9 @@ import StaticTestimonies from "../src/assets/stories2.json"
 
 export default function Home() {
   const staticTestimonies = StaticTestimonies
-  const [statefulTestimonies, saveTestimonies] = React.useState(
-    store.getState()
-  )
 
-  store.subscribe(() => saveTestimonies(store.getState()))
-  store.subscribe(() => console.log(statefulTestimonies))
+  const statefulTestimonies = useSelector((state) => state)
+  console.log(statefulTestimonies)
 
   const testimonies = (JSON_FILE) =>
     JSON_FILE.map((testimony, index) => (
