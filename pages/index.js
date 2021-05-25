@@ -23,9 +23,10 @@ export default function Home() {
       <Testimony
         key={index}
         name={testimony.name}
+        story={testimony.story}
         avatar={testimony.avatar}
         category={testimony.category}
-        story={testimony.story}
+        location={testimony.location}
       />
     ))
 

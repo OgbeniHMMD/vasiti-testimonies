@@ -30,8 +30,7 @@ export default function TopNavLinks(props) {
     category: "customer",
     avatar: null,
     story: "",
-    institution: "",
-    avatar: `https://picsum.photos/200`,
+    location: "",
   }
 
   // We'll update "values" as the form updates
@@ -55,18 +54,26 @@ export default function TopNavLinks(props) {
   }
 
   const SUBMIT_STORY = () => {
+    // prevent the page from reloading onSubmit
     event.preventDefault()
-
+    // hide the form dialog
     setDialogForm(false)
 
+    // Populate & process the data to save
     const payload = formValues
+    // Concatenate the user Names
     payload.name = `${formValues.firstName} ${formValues.lastName}`
+    // generate a random avatar
+    payload.avatar = `https://picsum.photos/200`
 
+    // Save the data to store
     store.dispatch({ type: "ADD_STORY", payload: formValues })
+    // Display the success dialog
     setDialogSuccess(true)
   }
 
   const CLOSE_SUCCESS_DIALOG = () => {
+    // hide the success dialog
     setDialogSuccess(false)
   }
 
@@ -283,7 +290,7 @@ export default function TopNavLinks(props) {
                     type="text"
                     fullWidth
                     variant="outlined"
-                    name="institution"
+                    name="location"
                     onBlur={handleInputValue}
                     onChange={handleInputValue}
                   />
