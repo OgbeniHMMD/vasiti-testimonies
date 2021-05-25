@@ -17,7 +17,6 @@ export default function Home() {
   const staticTestimonies = StaticTestimonies
 
   const statefulTestimonies = useSelector((state) => state)
-  console.log(statefulTestimonies)
 
   const testimonies = (JSON_FILE) =>
     JSON_FILE.map((testimony, index) => (
